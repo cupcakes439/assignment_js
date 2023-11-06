@@ -463,25 +463,25 @@ const median = nums=> {
 }
 
 //No 2
-const mode = nums=> {
-    let counts = []
-    let countOfHighestOccuringNumber = 0
-    let highestOccuringNumber = 0
-    nums.sort((a,b)=> a - b)
-    nums = nums.map(item=> {
-        if (counts[item] === undefined) {
-            return counts[item] = 1
-        }else return counts[item]++
-    })
+// const mode = nums=> {
+//     let counts = []
+//     let countOfHighestOccuringNumber = 0
+//     let highestOccuringNumber = 0
+//     nums.sort((a,b)=> a - b)
+//     nums = nums.map(item=> {
+//         if (counts[item] === undefined) {
+//             return counts[item] = 1
+//         }else return counts[item]++
+//     })
     
-    nums.map(item=> {
-        if(countOfHighestOccuringNumber < counts[item]) {
-            highestOccuringNumber = item
-            countOfHighestOccuringNumber = counts[item]
-        }
-    })
-    return highestOccuringNumber
-}
+//     nums.map(item=> {
+//         if(countOfHighestOccuringNumber < counts[item]) {
+//             highestOccuringNumber = item
+//             countOfHighestOccuringNumber = counts[item]
+//         }
+//     })
+//     return highestOccuringNumber
+// }
 
 //No 3
 const range = nums=> {
@@ -561,3 +561,32 @@ var removeElement = function(nums, val) {
     }).filter(item=> item!=="_")
 };
 // console.log(removeElement([3,2,2,3] , 3))
+let array = [1,1,1,1,2,2,2,3,3,4,5,5,5,5]
+const mode = (arr)=> {
+    let counter1 = 1 // this counts the occurences of the each number
+    let counter2 = 0  //this tracks the total no of elements counted so far
+    let obj = {} //this is to hold {element:no of occurence} as key: value pair
+    arr.sort((a,b)=> a-b)
+    
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i+1]) {   // compares the current element with the next element
+            counter1++     // if the current element is the same as the next element counter is incremented
+        }
+        else{     //otherwise the cuurent elem is nt same as the next element, meaning the count of the current element is complete...
+            obj[arr[i]] = counter1   // then we make the {element:no of occurence}
+            counter2 = counter2 + counter1  // the update total no of elements counted so far...
+            i = counter2 -1   // then set index to the last element counted completed
+            counter1 = 1   // reset counter1 to count the next unique element
+        }
+        // at the end of the loop, the obj is holding all the elements and their counts as key:value pairs...
+    }
+let numss =[]
+    let maxValue = Math.max(...Object.values(obj))  //this picks the highest value (count) in the obj 
+for(let prop in obj) {
+   if(obj[prop] === maxValue) {  // then iterate through the obj and determine the number (key) that has the highest value
+     numss.push(Number(prop))   //return that number that has the highest value
+   } 
+    }
+    return numss
+}
+console.log(mode(array))
