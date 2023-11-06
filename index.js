@@ -560,4 +560,4 @@ var removeElement = function(nums, val) {
         }else return item
     }).filter(item=> item!=="_")
 };
-console.log(removeElement([3,2,2,3] , 3))
+// console.log(removeElement([3,2,2,3] , 3))
