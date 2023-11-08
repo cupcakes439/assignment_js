@@ -589,4 +589,35 @@ for(let prop in obj) {
     }
     return numss
 }
-console.log(mode(array))
+// console.log(mode(array))
+
+// let str3 = "the cat is dog"
+// for (let item of str3) {
+//     console.log(item)
+// }
+
+// let nums = nums1.concat(nums2)
+//     nums.sort((a,b)=> a-b)
+//     if (nums.length % 2 == 0) {  
+//         return (Number(nums.splice((nums.length-1)/2 , 1)) + Number(nums.splice(nums.length/2 , 1)))/2
+//     }else return Number(nums.splice((nums.length-1)/2 , 1))
+
+const wordBreak = (s, wordDict)=> {
+    wordDict = wordDict.join("")
+    if (s == "") return false
+    else if (s.includes(wordDict) || wordDict.includes(s)) return true
+    else return false
+}
+// console.log(wordBreak("abcd", ["a" , "abc" , "b" ,"cd"]))
+
+const reverseWords = (s)=> s.trim().split(" ").filter(item=> item !== '').reverse().join(" ")
+// console.log(reverseWords("the sky is  blue"))
+
+var removeElement = function(nums, val) {
+    for (item of nums) {
+        if (item == val) {
+            item == "_"
+        }
+    }
+    return nums
+};

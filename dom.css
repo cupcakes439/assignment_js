@@ -1,0 +1,32 @@
+body {
+    height: 78vh;
+    background-image: linear-gradient(to right, red , yellow)
+}
+.parent {
+    margin: 20vh auto;
+    width: 50%;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 10px;
+    background-image: linear-gradient( red ,yellow)
+}
+
+p {
+    color: white;
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.class-input {
+    width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    border: 0px white;
+}
+
+h2 {
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
